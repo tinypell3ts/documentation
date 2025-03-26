@@ -1,0 +1,33 @@
+{
+	"name": "docs",
+	"module": "index.ts",
+	"type": "module",
+	"private": true,
+	"devDependencies": {
+		"@types/bun": "latest",
+		"@types/node": "^22.13.11",
+		"@types/react": "^19.0.12",
+		"add": "^2.0.6",
+		"bun": "^1.2.5"
+	},
+	"scripts": {
+		"dev": "next --turbopack",
+		"build": "next build",
+		"start": "next start"
+	},
+	"peerDependencies": {
+		"typescript": "^5.8.2"
+	},
+	"dependencies": {
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1",
+		"lucide-react": "^0.483.0",
+		"next": "^15.2.3",
+		"nextra": "^4.2.17",
+		"nextra-theme-docs": "^4.2.17",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0",
+		"tailwind-merge": "^3.0.2",
+		"tw-animate-css": "^1.2.4"
+	}
+}

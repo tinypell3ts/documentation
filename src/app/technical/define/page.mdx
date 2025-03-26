@@ -1,0 +1,43 @@
+---
+sidebarTitle: Define
+---
+
+## JSON Standard for Task Definition
+
+Below is an example of a standardized JSON format that can be used to define tasks within the Open Format ecosystem:
+
+```json
+{
+  "taskId": "task-123456",
+  "title": "Fix API Authentication Bug",
+  "description": "There's an issue with JWT token validation in the authentication middleware that needs to be fixed.",
+  "criteria": [
+    "All API endpoints must validate JWT tokens correctly",
+    "Expired tokens should return 401 Unauthorized",
+    "Malformed tokens should return 400 Bad Request",
+    "Implementation must include unit tests with >90% coverage"
+  ],
+  "deadline": "2023-12-15T23:59:59Z",
+  "reward": {
+    "amount": "0.5",
+    "token": "ETH",
+    "distribution": "on-completion"
+  },
+  "skills": ["Solidity", "JavaScript", "Security"],
+  "difficulty": "intermediate",
+  "status": "open",
+  "escrow": {
+    "contractAddress": "0x1234567890abcdef1234567890abcdef12345678",
+    "lockedAmount": "0.5",
+    "releaseCondition": "validator-approval"
+  },
+  "metadata": {
+    "priority": "high",
+    "source": "github-issue-142",
+    "tags": ["bug-fix", "security", "authentication"]
+  }
+}
+```
+
+This JSON structure provides a comprehensive definition of a task, including clear success criteria, reward information, and escrow details to ensure transparent and fair task allocation and completion.
+

@@ -1,0 +1,73 @@
+---
+sidebarTitle: Validate
+---
+
+## Task Validation Process
+
+After tasks are defined, the next critical step in the Open Format ecosystem is validation. Similar to proof of stake mechanisms in blockchain networks, validators must stake $OPEN tokens to participate in the validation process.
+
+### Validation Flow
+
+1. **Task Creation**: A Creator defines a task with clear criteria and reward
+2. **Task Claiming**: A Worker claims and completes the task
+3. **Submission**: The Worker submits their completed work
+4. **Validation Pool**: Validators who have staked $OPEN tokens review the submission
+5. **Review Process**: Validators check the work against the predefined criteria
+6. **Decision**: Validators reach consensus on approval or rejection
+7. **Outcome**: 
+   - If approved: Worker receives payment, validators earn fees
+   - If rejected: Worker can appeal, dishonest validators may lose stakes
+
+### Key Actors
+
+- **Creator**: Defines tasks and allocates rewards
+- **Worker**: Claims and completes tasks
+- **Validators**: Stake $OPEN tokens to participate in validation
+
+### Economic Incentives
+
+- Validators earn fees for honest validation
+- Malicious validators risk having their stakes slashed
+- Workers receive rewards upon task approval
+- Dispute resolution mechanisms protect all parties
+
+This validation system ensures task completion meets the required standards while maintaining trust through economic incentives, much like proof of stake consensus in blockchain networks.
+
+```mermaid
+graph TD
+    %% Key Actors
+    Creator((Creator))
+    Worker((Worker))
+    Validators((Validators))
+    
+    %% Process Flow
+    Creator -->|1\. Creates task| Task[Task]
+    Worker -->|2\. Claims & completes| Task
+    Task -->|3\. Work submitted| Submission[Submission]
+    Validators -->|4\. Stake $OPEN & validate| Submission
+    Submission -->|5\. Validation begins| VP[Validation Pool]
+    VP -->|6\. Review against criteria| Decision{Decision}
+    Decision -->|7a\. Approved| Accepted[Task Accepted]
+    Decision -->|7b\. Rejected| Rejected[Task Rejected]
+    
+    %% Outcomes
+    Accepted -->|Worker paid| Worker
+    Accepted -->|Validators earn fees| Validators
+    Rejected -->|Worker can appeal| Appeal[Appeal Process]
+    Rejected -->|Bad validators slashed| Slashed[Stake Slashing]
+    
+    %% Styling
+    classDef actor fill:#f9d5e5,stroke:#333,stroke-width:2px,color:#000
+    classDef process fill:#c3e4fe,stroke:#333,stroke-width:2px,color:#000
+    classDef decision fill:#fff4b8,stroke:#333,stroke-width:2px,color:#000
+    classDef outcome fill:#d5f5e3,stroke:#333,stroke-width:2px,color:#000
+    classDef negative fill:#fadbd8,stroke:#333,stroke-width:2px,color:#000
+    classDef flowLabel font-style:italic,font-weight:bold,fill:none,stroke:none
+    classDef process rx:10,ry:10,padding:5px,fill:#c3e4fe,stroke:#333,stroke-width:2px
+  
+    class Creator,Worker,Validators actor
+    class Task,Submission,VP process
+    class Decision decision
+    class Accepted,Appeal outcome
+    class Rejected,Slashed negative
+```

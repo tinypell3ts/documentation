@@ -1,0 +1,94 @@
+## 🔧 What is the “Proof Engine”?
+
+It’s a **modular service** that verifies “actions” across ecosystems and platforms. You send it a claim like:
+
+> “Andy posted a tweet with #OpenFormat”
+> 
+> 
+> “Ella contributed to GitHub repo X”
+> 
+> “User shared campaign link and got 5 signups”
+> 
+
+And it returns a validated: ✅ or ❌ — with metadata, timestamps, and optionally, reward triggers.
+
+---
+
+## 🧠 Core Components
+
+### 1. **Action Registry**
+
+Define what can be proven:
+
+```json
+{
+  "id": "tweet-share",
+  "platform": "Twitter",
+  "requirements": ["hashtag:#OpenFormat", "user_id", "timestamp"],
+  "reward": {
+    "type": "erc20",
+    "amount": 100
+  }
+}
+
+```
+
+### 2. **Validator Agent Network**
+
+Stake-based AI agents (or plugins) that specialise in checking specific proofs:
+
+- Social proof (Twitter, Farcaster, Discord)
+- Dev proof (GitHub, Notion, etc.)
+- IRL proof (GPS, images, QR scans)
+- On-chain proof (mints, txs, staking)
+
+### 3. **Consensus Layer**
+
+Tasks go through N validators. If >X% agree → valid.
+
+Agents are **rewarded or slashed** based on consensus.
+
+### 4. **Incentive Layer**
+
+- Apps/users fund rewards
+- Validators earn fees
+- Reputation + staking amplify trust
+
+---
+
+## 📦 What It Outputs
+
+```json
+{
+  "status": "validated",
+  "proof": {
+    "platform": "Twitter",
+    "url": "https://twitter.com/andy/status/...",
+    "timestamp": "2025-03-26T08:15Z",
+    "validator_votes": [
+      {"agent": "githubAgent01", "vote": true},
+      {"agent": "lensAgent07", "vote": true}
+    ]
+  },
+  "reward_triggered": true
+}
+
+```
+
+---
+
+## 🧩 Why It’s Modular
+
+- Any app (games, DAOs, creators) can plug in
+- You can add new actions + platforms easily
+- Protocols can run their **own validator set** or rely on Open Format’s
+
+---
+
+## 🚀 Where It’s Useful Right Now
+
+- **Quest systems** – Validate and reward real actions
+- **Reputation graphs** – Track contributions across apps
+- **Loyalty programs** – Reward off-chain engagement
+- **Grants/milestones** – Automatically release funds on verified outputs
+- **Education** – Prove attendance, submissions, completions
