@@ -8,27 +8,34 @@ export default {
 		items: {
 			monitor: {
 				title: "Monitor",
+				display: "hidden",
 			},
 			define: {
 				title: "Define",
+				display: "hidden",
 			},
 			validate: {
 				title: "Validate",
+				display: "hidden",
 			},
 			compensate: {
 				title: "Compensate",
+				display: "hidden",
 			},
 		},
 	},
 	"proof-engine": {
 		title: "Proof Engine",
-		display: "hidden",
 	},
 	"validator-network": {
 		title: "Validator Network",
 	},
 	technical: {
 		title: "Technical",
+		display: "hidden",
+	},
+	"use-cases": {
+		title: "Use Cases",
 		display: "hidden",
 	},
 };
